@@ -1,5 +1,6 @@
 package com.library.service;
 
+import com.library.exception.InvalidBookException;
 import com.library.model.Book;
 
 import java.util.ArrayList;
@@ -9,7 +10,11 @@ public class LibraryService {
 
     //Add Book
 
-    public void addBook(Book book){
+    public void addBook(Book book) throws InvalidBookException {
+        if (book.getBook_id() <= 0) {
+            throw new InvalidBookException("Invalid Book ID!");
+        }
+
         bookList.add(book);
         System.out.println("Book added successfully!");
     }

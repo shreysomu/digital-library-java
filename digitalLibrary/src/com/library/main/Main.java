@@ -1,5 +1,6 @@
 package com.library.main;
 
+import com.library.exception.InvalidBookException;
 import com.library.model.Book;
 import com.library.service.LibraryService;
 
@@ -25,7 +26,7 @@ public class Main {
 
         LibraryService library = new LibraryService();
 
-        int choice;
+        int choice = 0;
         do{
             System.out.println("\n============== Digital Library menu ===================");
             System.out.println("1. Add Book");
@@ -36,26 +37,62 @@ public class Main {
             System.out.println("6. Exit");
 
             System.out.print("Enter you choice : ");
-            choice = sc.nextInt();
+
+            try {
+                choice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("Invalid choice please enter again !");
+                sc.nextLine();
+                continue;
+
+            }
 
             switch (choice){
 
                 case 1:
-                    System.out.print("Enter BookID: ");
-                    int book_id = sc.nextInt();
-                    sc.nextLine();
+                    try {
+                        System.out.print("Enter BookID: ");
+                        int book_id = sc.nextInt();
+                        sc.nextLine();
 
-                    System.out.print("Enter BookTitle: ");
-                    String book_title = sc.nextLine();
+                        if(book_id<=0){
+                            System.out.println("BookID must be a Positive number ");
+                            continue;
+                        }
 
-                    System.out.print("Enter BookAuthor: ");
-                    String book_author = sc.nextLine();
+                        System.out.print("Enter BookTitle: ");
+                        String book_title = sc.nextLine();
 
-                    System.out.print("Enter BookPrice: ");
-                    double book_price = sc.nextDouble();
+                        if(book_title.isEmpty()){
+                            System.out.println("BookTitle can not be Empty !");
+                            continue;
+                        }
 
-                    Book book = new Book(book_id,book_title,book_author,book_price);
-                    library.addBook(book);
+                        System.out.print("Enter BookAuthor: ");
+                        String book_author = sc.nextLine();
+
+                        if(book_author.isEmpty()){
+                            System.out.println("BookAuthor can not be Empty !");
+                            continue;
+                        }
+
+                        System.out.print("Enter BookPrice: ");
+                        double book_price = sc.nextDouble();
+                        if(book_price<0){
+                            System.out.println("BookPrice can not negative !");
+                            continue;
+                        }
+
+                        Book book = new Book(book_id, book_title, book_author, book_price);
+                        try {
+                            library.addBook(book);
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Invalid output ! try again....");
+                        continue;
+                    }
                     break;
 
                 case 2:
@@ -64,15 +101,26 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Enter Book ID to search: ");
-                    int searchID = sc.nextInt();
-                    library.findBookById(searchID);
+                    try {
+                        System.out.println("Enter Book ID to search: ");
+                        int searchID = sc.nextInt();
+                        library.findBookById(searchID);
+                    } catch (Exception e) {
+                        System.out.println("Invalid SearchId format !");
+                        continue;
+                    }
                     break;
 
+
                 case 4:
-                    System.out.print("Enter Book ID to delete: ");
-                    int deletedID = sc.nextInt();
-                    library.deleteBook(deletedID);
+                    try {
+                        System.out.print("Enter Book ID to delete: ");
+                        int deletedID = sc.nextInt();
+                        library.deleteBook(deletedID);
+                    } catch (Exception e) {
+                        System.out.println("Invalid id to delete !");
+                        continue;
+                    }
 
                     System.out.println("\nUpdated Book List:");
                     library.displayBooks();
@@ -81,23 +129,46 @@ public class Main {
 
 
                 case 5:
-                    System.out.print("Enter Book ID to update: ");
-                    int updatedID = sc.nextInt();
-                    sc.nextLine();
+                    try {
+                        System.out.print("Enter Book ID to update: ");
+                        int updatedID = sc.nextInt();
+                        sc.nextLine();
 
-                    System.out.print("Enter new Title: ");
-                    String newTitle = sc.nextLine();
+                        if(updatedID<=0){
+                            System.out.println("BookID must be a Positive number ");
+                            continue;
+                        }
 
-                    System.out.print("Enter new Author: ");
-                    String newAuthor = sc.nextLine();
+                        System.out.print("Enter new Title: ");
+                        String newTitle = sc.nextLine();
+                        if(newTitle.isEmpty()){
+                            System.out.println("BookTitle can not be Empty !");
+                            continue;
+                        }
 
-                    System.out.print("Enter new Price : ");
-                    double newPrice = sc.nextDouble();
+                        System.out.print("Enter new Author: ");
+                        String newAuthor = sc.nextLine();
 
-                    library.updateBook(updatedID,newTitle,newAuthor,newPrice);
+                        if(newAuthor.isEmpty()){
+                            System.out.println("BookTitle can not be Empty !");
+                            continue;
+                        }
 
-                    System.out.println("\nUpdated Book List:");
-                    library.displayBooks();
+                        System.out.print("Enter new Price : ");
+                        double newPrice = sc.nextDouble();
+                        if(newPrice<0){
+                            System.out.println("BookPrice can not negative !");
+                            continue;
+                        }
+
+                        library.updateBook(updatedID, newTitle, newAuthor, newPrice);
+
+                        System.out.println("\nUpdated Book List:");
+                        library.displayBooks();
+                    } catch (Exception e) {
+                        System.out.println("Invalid input entered to update !");
+                        continue;
+                    }
                     break;
 
 

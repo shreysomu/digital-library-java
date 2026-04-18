@@ -1,6 +1,7 @@
 package com.library.model;
 
 public class Book {
+    public Object getbook_title;
     private int book_id;
     private String book_title;
     private String book_author;
@@ -17,7 +18,17 @@ public class Book {
         return book_id;
     }
 
+    public String getBook_author() {
+        return book_author;
+    }
 
+    public double getBook_price() {
+        return book_price;
+    }
+
+    public String getBook_title() {
+        return book_title;
+    }
 
     public void setBook_title(String book_title) {
         this.book_title = book_title;
