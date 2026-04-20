@@ -6,10 +6,7 @@ It supports CRUD operations on books and incorporates OOP principles,
 ArrayList for data management, and robust exception handling to ensure  
 a crash-free user experience.  
 
-The application also includes **file handling for data persistence**,  
-making it behave like a real-world system.
 
----
 
 ## 🚀 Features
 - Add Book
