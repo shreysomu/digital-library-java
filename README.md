@@ -10,10 +10,7 @@ a crash-free user experience.
 a crash-free user experience.  
 >>>>>>> b051f3a37eaa91d1a07d949305c5c5cf93b1c1c1
 
-The application also includes **file handling for data persistence**,  
-making it behave like a real-world system.
 
----
 
 ## 🚀 Features
 - Add Book
