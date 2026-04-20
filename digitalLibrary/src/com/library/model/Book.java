@@ -1,7 +1,6 @@
 package com.library.model;
 
 public class Book {
-    public Object getbook_title;
     private int book_id;
     private String book_title;
     private String book_author;
@@ -42,7 +41,14 @@ public class Book {
         this.book_price = book_price;
     }
 
-    public void displayBook(){
-        System.out.println("BookID: " + book_id + ", BookTitle: " + book_title + ", BookAuthor: " + book_author + ", BookPrice : " + book_price);
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "book_id=" + book_id +
+                ", book_title='" + book_title + '\'' +
+                ", book_author='" + book_author + '\'' +
+                ", book_price=" + book_price +
+                '}';
     }
 }
