@@ -130,4 +130,19 @@ public class LibraryService {
             System.out.println("Error loading data!");
         }
     }
+
+
+    public void sortBooksByTitle(){
+        bookList.sort((b1,b2) -> b1.getBook_title().compareToIgnoreCase(b2.getBook_title()));
+        System.out.println("Books sorted by title!");
+    }
+
+    public void sortBooksByPrice(){
+        bookList.sort((b1,b2) -> Double.compare(b1.getBook_price(), b2.getBook_price()));
+        System.out.println("Books sorted by price !");
+    }
+
+    public void showTotalBooks(){
+        System.out.println("Total Books : " + bookList.size());
+    }
 }

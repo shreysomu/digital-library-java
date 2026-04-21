@@ -23,14 +23,17 @@ public class Main {
             System.out.println("3. Search Book");
             System.out.println("4. Delete Book");
             System.out.println("5. Update Book");
-            System.out.println("6. Exit");
+            System.out.println("6. Sort Books by Title");
+            System.out.println("7. Sort Books by Price");
+            System.out.println("8. Total Books ");
+            System.out.println("9. Exit");
 
             System.out.print("Enter your choice: ");
 
             try {
                 choice = sc.nextInt();
             } catch (Exception e) {
-                System.out.println("Invalid input! Enter number.");
+                System.out.println("Invalid input! Please try again.");
                 sc.nextLine();
                 continue;
             }
@@ -82,7 +85,7 @@ public class Main {
                         }
 
                     } catch (Exception e) {
-                        System.out.println("Invalid input! Try again.");
+                        System.out.println("Invalid input! Please try again.");
                         sc.nextLine();
                     }
                     break;
@@ -146,7 +149,23 @@ public class Main {
                     }
                     break;
 
+
+
                 case 6:
+                    library.sortBooksByTitle();
+                    library.displayBooks();
+                    break;
+
+
+                case 7:
+                    library.sortBooksByPrice();
+                    library.displayBooks();
+                    break;
+
+                case 8:
+                    library.showTotalBooks();
+
+                case 9:
                     library.saveToFile();
                     System.out.println("Exiting... Thank you!");
                     break;
