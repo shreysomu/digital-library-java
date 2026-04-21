@@ -20,6 +20,9 @@ making it behave like a real-world system.
 - Menu-driven console application
 - Exception handling (crash-proof)
 - File handling (data saved even after restart)
+- Sorting (by title/price)
+- Showing all Books
+- Data persistence using file handling
 
 ---
 
@@ -29,7 +32,7 @@ making it behave like a real-world system.
 - Collections (ArrayList)
 - Exception Handling
 - File Handling (Java IO)
-
+- Java 8 Concepts
 ---
 
 ## 📸 Sample Output
@@ -40,8 +43,11 @@ making it behave like a real-world system.
 **2.** View Books     
 **3.** Search Book    
 **4.** Update Book   
-**5.** Delete Book      
-**6.** Exit
+**5.** Delete Book       
+**6.** Sort Books by Title      
+**7.** sort Books by Title      
+**8.** All Books      
+**9.** Exit
 
 
 ---
@@ -52,10 +58,13 @@ making it behave like a real-world system.
 - Exception Handling
 - File Handling (data persistence)
 - Menu-driven application design
-
+- Java 8 Concepts
 ---
 
 ## 🚀 Future Improvements
+
+- Add validation ()
+- Add User and Admin
 - Database integration (MySQL)
 - Spring Boot REST APIs
 - Web-based UI (React / HTML-CSS)
