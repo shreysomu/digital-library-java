@@ -45,7 +45,7 @@ making it behave like a real-world system.
 **4.** Update Book   
 **5.** Delete Book       
 **6.** Sort Books by Title      
-**7.** sort Books by Title      
+**7.** Sort Books by Price      
 **8.** All Books      
 **9.** Exit
 
