@@ -4,13 +4,12 @@
 A menu-driven Digital Library application developed using Core Java.  
 It supports CRUD operations on books and incorporates OOP principles,  
 ArrayList for data management, and robust exception handling to ensure  
-<<<<<<< HEAD
-a crash-free user experience.
-=======
 a crash-free user experience.  
->>>>>>> b051f3a37eaa91d1a07d949305c5c5cf93b1c1c1
 
+The application also includes **file handling for data persistence**,  
+making it behave like a real-world system.
 
+---
 
 ## 🚀 Features
 - Add Book
@@ -21,6 +20,9 @@ a crash-free user experience.
 - Menu-driven console application
 - Exception handling (crash-proof)
 - File handling (data saved even after restart)
+- Sorting (by title/price)
+- Showing all Books
+- Data persistence using file handling
 
 ---
 
@@ -30,7 +32,7 @@ a crash-free user experience.
 - Collections (ArrayList)
 - Exception Handling
 - File Handling (Java IO)
-
+- Java 8 Concepts
 ---
 
 ## 📸 Sample Output
@@ -41,12 +43,11 @@ a crash-free user experience.
 **2.** View Books     
 **3.** Search Book    
 **4.** Update Book   
-**5.** Delete Book      
-<<<<<<< HEAD
-**6.** Exit
-=======
-**6.** Exit    
->>>>>>> b051f3a37eaa91d1a07d949305c5c5cf93b1c1c1
+**5.** Delete Book       
+**6.** Sort Books by Title      
+**7.** sort Books by Title      
+**8.** All Books      
+**9.** Exit
 
 
 ---
@@ -57,10 +58,13 @@ a crash-free user experience.
 - Exception Handling
 - File Handling (data persistence)
 - Menu-driven application design
-
+- Java 8 Concepts
 ---
 
 ## 🚀 Future Improvements
+
+- Add validation ()
+- Add User and Admin
 - Database integration (MySQL)
 - Spring Boot REST APIs
 - Web-based UI (React / HTML-CSS)
